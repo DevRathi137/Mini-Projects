@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+        body {
+            background: linear-gradient(120deg, rgb(0, 32, 0), rgba(0, 162, 11, 0.703));
+            font-family: "Roboto Mono", monospace;
+            color: rgb(236, 236, 236);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="hack-text">Initializing Hacking...</div>
+    <audio id="hacking-sound" src="k55-keyboard-sound-99703.mp3" loop></audio>
+
+    <script>
+        const text = [
+            "Initialize Hacking",
+            "Reading your file",
+            "Password file detected",
+            "Sending all passwords and personal files to the main server",
+            "Cleaning up",
+            "Done"
+        ];
+
+        const hackTextElement = document.getElementById('hack-text');
+        const hackingSound = document.getElementById('hacking-sound');
+
+        async function simulateHacking() {
+            for (const item of text) {
+                await addItem(item);
+            }
+        }
+
+        async function addItem(item) {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    hackTextElement.textContent = item;
+                    resolve();
+                }, 2000); // Change the delay time if needed
+            });
+        }
+
+        // Ensure the sound starts when the user interacts with the page
+        document.addEventListener('click', startSound);
+
+        function startSound() {
+            hackingSound.play();
+            // Remove the event listener to prevent starting the sound multiple times
+            document.removeEventListener('click', startSound);
+        }
+
+        simulateHacking();
+    </script>
+</body>
+
+</html>
