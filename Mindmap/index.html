@@ -1,0 +1,34 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Journey Tracker</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <h1>Learning Journey Tracker</h1>
+    <div id="network"></div>
+    <form id="inputForm">
+        <input type="text" id="subject" placeholder="Enter Subject Name" required>
+        <button type="button" onclick="setSubject()">Set Subject</button>
+        <br><br>
+        <input type="text" id="topic" placeholder="Enter Topic">
+        <input type="file" id="imageUpload" accept="image/*">
+        <select id="priority">
+            <option value="high">High Priority</option>
+            <option value="medium">Medium Priority</option>
+            <option value="low">Low Priority</option>
+        </select>
+        <button type="button" onclick="addNode()">Add Topic</button>
+    </form>
+    <div id="imageContainer"></div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html> 
+
+
