@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lira-Music</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <img src="img/logo.png" class="logo">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">SPECIFICATION</a></li>
+                <li><a href="#">PRODUCT</a></li>
+                <li><a href="#">CONNECT</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="left">
+                <h1>THE <br>REAL <br>SOUND</h1>
+            </div>
+            <div class="right">
+                <p>Click To Listen</p>
+                <img src="img/play.png" id="icon">
+            </div>
+        </div>
+    </div>
+
+    <audio id="mySong">
+        <source src="audio/Jim-Yosef-Arrow-NCS-Release.mp3" type="audio/mp3">
+        <source src="audio/On-My-Way-(pagalworld4u.wapkiz.com).mp3" type="audio/mp3">
+        <source src="audio/takeaway-lyrics-ft-lennon-stella.mp3" type="audio/mp3">
+        <source src="audio/Uchiyaan Dewaraan - Bilal Saeed.mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+        var mySong = document.getElementById("mySong");
+        var icon = document.getElementById("icon");
+        var sources = [
+            "audio/Jim-Yosef-Arrow-NCS-Release.mp3",
+            "audio/On-My-Way-(pagalworld4u.wapkiz.com).mp3",
+            "audio/takeaway-lyrics-ft-lennon-stella.mp3",
+            "audio/Uchiyaan Dewaraan - Bilal Saeed.mp3"
+        ];
+        var currentSourceIndex = 0;
+    
+        icon.onclick = function(){
+            if(mySong.paused){
+                mySong.play();
+                icon.src = "img/pause.png";
+            } else {
+                mySong.pause();
+                icon.src = "img/play.png";
+            }
+        };
+    
+        mySong.onended = function() {
+            currentSourceIndex = (currentSourceIndex + 1) % sources.length;
+            mySong.src = sources[currentSourceIndex];
+            mySong.play();
+        };
+    </script>
+    
+</body>
+</html>

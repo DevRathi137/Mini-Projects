@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lira-Music</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <img src="img/logo.png" class="logo">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">SPECIFICATION</a></li>
+                <li><a href="#">PRODUCT</a></li>
+                <li><a href="#">CONNECT</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="left">
+                <h1>THE <br>REAL <br>SOUND</h1>
+            </div>
+            <div class="right">
+                <img src="img/prev.png" id="prev" class="icon prev">
+                <img src="img/play.png" id="play" class="icon play">
+                <img src="img/forw.png" id="forw" class="icon forw">
+            </div>
+        </div>
+        
+    </div>
+
+    <audio id="mySong">
+        <source src="audio/Jim-Yosef-Arrow-NCS-Release.mp3" type="audio/mp3">
+        <source src="audio/On-My-Way-(pagalworld4u.wapkiz.com).mp3" type="audio/mp3">
+        <source src="audio/takeaway-lyrics-ft-lennon-stella.mp3" type="audio/mp3">
+        <source src="audio/Uchiyaan Dewaraan - Bilal Saeed.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- <script>
+        var mySong = document.getElementById("mySong");
+        // var icon = document.getElementById("icon");
+        var prevBtn = document.getElementById("prev");
+        var nextBtn = document.getElementById("forw");
+        var play = document.getElementById("play");
+        var sources = [
+            "audio/Jim-Yosef-Arrow-NCS-Release.mp3",
+            "audio/On-My-Way-(pagalworld4u.wapkiz.com).mp3",
+            "audio/takeaway-lyrics-ft-lennon-stella.mp3",
+            "audio/Uchiyaan Dewaraan - Bilal Saeed.mp3"
+        ];
+        var currentSourceIndex = 0;
+    
+        function playPause() {
+            if (mySong.paused) {
+                mySong.play();
+                play.src = "img/pause.png";
+            } else {
+                mySong.pause();
+                play.src = "img/play.png";
+            }
+        }
+    
+        play.onclick = function() {
+            playPause();
+        };
+    
+        prevBtn.onclick = function() {
+            currentSourceIndex = (currentSourceIndex - 1 + sources.length) % sources.length;
+            mySong.src = sources[currentSourceIndex];
+            playPause();
+        };
+    
+        nextBtn.onclick = function() {
+            currentSourceIndex = (currentSourceIndex + 1) % sources.length;
+            mySong.src = sources[currentSourceIndex];
+            playPause();
+        };
+    
+        mySong.onended = function() {
+            currentSourceIndex = (currentSourceIndex + 1) % sources.length;
+            mySong.src = sources[currentSourceIndex];
+            playPause();
+        };
+    </script> -->
+
+    <script>
+        var mySong = document.getElementById("mySong");
+        var prevBtn = document.getElementById("prev");
+        var nextBtn = document.getElementById("forw");
+        var playIcon = document.getElementById("play");
+        var sources = [
+            "audio/Jim-Yosef-Arrow-NCS-Release.mp3",
+            "audio/On-My-Way-(pagalworld4u.wapkiz.com).mp3",
+            "audio/takeaway-lyrics-ft-lennon-stella.mp3",
+            "audio/Uchiyaan Dewaraan - Bilal Saeed.mp3"
+        ];
+        var currentSourceIndex = 0;
+    
+        function playPause() {
+            if (mySong.paused) {
+                mySong.play();
+                playIcon.src = "img/pause.png";
+            } else {
+                mySong.pause();
+                playIcon.src = "img/play.png";
+            }
+        }
+    
+        playIcon.onclick = function() {
+            playPause();
+        };
+    
+        prevBtn.onclick = function() {
+            currentSourceIndex = (currentSourceIndex - 1 + sources.length) % sources.length;
+            mySong.src = sources[currentSourceIndex];
+            playPause();
+        };
+    
+        nextBtn.onclick = function() {
+            currentSourceIndex = (currentSourceIndex + 1) % sources.length;
+            mySong.src = sources[currentSourceIndex];
+            playPause();
+        };
+    
+        mySong.onended = function() {
+            currentSourceIndex = (currentSourceIndex + 1) % sources.length;
+            mySong.src = sources[currentSourceIndex];
+            playPause();
+        };
+    </script>
+    
+    
+    
+    
+</body>
+</html>
